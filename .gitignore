@@ -5,6 +5,9 @@
 *.tfstate
 *.tfstate.*
 
+#credentials
+account.json
+
 # Crash log files
 crash.log
 
