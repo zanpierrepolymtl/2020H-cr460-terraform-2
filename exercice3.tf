@@ -1,8 +1,8 @@
 provider "google" {
-  project = "zonedetest"
+  project = "zonedetest-267800"
   credentials = "account.json"
-  region  = "northamerica-northeast1"
-  zone    = "northamerica-northeast1-a"
+  region  = "us-central1"
+  zone    = "us-central1-c"
 }
 
 resource "google_compute_instance" "instance1" {
@@ -49,14 +49,14 @@ resource "google_compute_network" "cr460demo" {
 resource "google_compute_subnetwork" "mtl-dmz" {
   name          = "mtl-dmz"
   ip_cidr_range = "172.16.1.0/24"
-  region        = "northamerica-northeast1"
+  region  = "us-central1"
   network       = google_compute_network.cr460demo.self_link
 }
 
 resource "google_compute_subnetwork" "mtl-internal" {
   name          = "mtl-internal"
   ip_cidr_range = "10.0.1.0/24"
-  region        = "northamerica-northeast1"
+  region  = "us-central1"
   network       = google_compute_network.cr460demo.self_link
 }
 
